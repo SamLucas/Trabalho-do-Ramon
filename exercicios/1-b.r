@@ -1,0 +1,1 @@
+# - b) Em quais meses a doença_café foi mais incidente? Houve variação por ano? (ex: a doença geralmente ocorreu nos meses de dezembro, janeiro e fevereiro, porém nos anos de X e Y ocorrem em maior incidência nos meses de abril e maio).
