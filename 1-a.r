@@ -10,7 +10,8 @@ library(magrittr)
 library(dplyr)
 library(plyr) 
 
-df_total_alta = read.csv(file = 'alta-regiao-2-alta - Página1.csv')
+df_total_alta = read.csv(file = './src/alta-regiao-2-alta - Página1.csv')
+df_total_baixa = read.csv(file = './src/alta-regiao-2-baixa - Página1.csv')
 
 # install.packages("tidyverse")
 # library(tidyverse)
@@ -43,7 +44,14 @@ converte = function(x){
 for(i in 1:nrow(df_total_alta))
   df_total_alta$c_alta_categoria[i] = converte(df_total_alta$alta[i])
 
-dados_doenca = df_total_alta[,c(1,2,28)]
+for(i in 1:nrow(df_total_baixa))
+  df_total_baixa$c_alta_categoria[i] = converte(df_total_baixa$baixa[i])
 
-dados_doenca_alta <- dados_doenca[dados_doenca$c_alta_categoria == "alto",]
-dados_doenca_alta
+dados_doenca_alta = df_total_alta[,c(1,2,28)]
+dados_doenca_baixa = df_total_baixa[,c(1,2,28)]
+
+result_dados_doenca_alta <- dados_doenca_alta[dados_doenca_alta$c_alta_categoria == "alto",]
+result_dados_doenca_baixa <- dados_doenca_baixa[dados_doenca_baixa$c_alta_categoria == "baixo",]
+
+result_dados_doenca_alta
+result_dados_doenca_baixa
