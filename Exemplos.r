@@ -42,7 +42,6 @@ for(i in 1:nrow(df_total)){
   df_total$c_alta_categoria[i] = converte(df_total$c_alta[i])
 }
 
-
 df_total = df_total[,c(28,1,2,29,3:27)]
 
 #Utilizando a m�dia
