@@ -67,9 +67,6 @@ df_total_baixa$NDR.10mm = apply(df_total_baixa[,21:23], 1, mean)
 df_total_baixa$NRH80 = apply(df_total_baixa[,24:26], 1, mean)
 df_total_baixa$NRH90 = apply(df_total_baixa[,27:29], 1, mean)
 
-df_total_sA = df_total_alta[,c(1:5,29:36)]
-df_total_sB = df_total_baixa[,c(1:5,29:36)]
-
 mes_a<-c(0,0,0,0,0,0,0,0,0,0,0,0)
 for(i in 1:nrow(df_total_alta)){
     if(df_total_alta$mes[i]=='janeiro'){
