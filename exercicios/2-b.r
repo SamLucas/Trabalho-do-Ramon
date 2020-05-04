@@ -22,7 +22,7 @@ df_total_baixa = read.csv(file = './src/alta-regiao-2-baixa - Página1.csv')
 
 # ====================================================================
 # 2) Análise de correlação e regressão linear (3,0 pontos) Nas análises de correlação e regressão linear, você deve
-# - a) Gerar correlações entre a variável doença_café e as demais variáveis.
+# - b) Gerar modelos de regressão linear simples e múltipla para previsão da doença do café.
 
 converte = function(x){
   if(x < 20.1) return("baixo") 
@@ -72,7 +72,7 @@ df_total_baixa$NRH90 = apply(df_total_baixa[,27:29], 1, mean)
 df_total_sA = df_total_alta[,c(1:5,29:36)]
 df_total_sB = df_total_baixa[,c(1:5,29:36)]
 
-df_alta = data.frame(
+teste = data.frame(
   df_total_sA$alta,
   df_total_sA$P,
   df_total_sA$UR,
@@ -81,23 +81,8 @@ df_alta = data.frame(
   df_total_sA$NDR.1mm,
   df_total_sA$NDR.10mm,
   df_total_sA$NRH80,
-  df_total_sA$NRH90
+  df_total_alta_aux$NRH90
 )
 
-M_alta <- cor(df_alta)
-corrplot(M_alta,method = "circle")
-
-df_baixa = data.frame(
-  df_total_sB$alta,
-  df_total_sB$P,
-  df_total_sB$UR,
-  df_total_sB$TMAX,
-  df_total_sB$TMIN,
-  df_total_sB$NDR.1mm,
-  df_total_sB$NDR.10mm,
-  df_total_sB$NRH80,
-  df_total_sB$NRH90
-)
-
-M_baixa <- cor(df_baixa)
-corrplot(M_baixa,method = "circle")
+M <- cor(teste)
+corrplot(M,method = "circle")
