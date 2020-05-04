@@ -119,11 +119,62 @@ for(i in 1:nrow(df_total_alta)){
                           if(df_total_alta$mes[i]=='dezembro'){
                             mes_a[12]=mes_a[12]+df_total_alta$alta[i]
                           }
-                        }}}}}}}}}}}
- # }
-}
+                        }}}}}}}}}}}}
+
+mes_b<-c(0,0,0,0,0,0,0,0,0,0,0,0)
+for(i in 1:nrow(df_total_baixa)){
+    if(df_total_baixa$mes[i]=='janeiro'){
+      mes_b[1]=mes_b[1]+df_total_baixa$baixa[i]
+    }
+    else{
+      if(df_total_baixa$mes[i]=='fevereiro'){
+        mes_b[2]=mes_b[2]+df_total_baixa$baixa[i]
+      }
+      else{
+        if(df_total_baixa$mes[i]=='marco'){
+          mes_b[3]=mes_b[3]+df_total_baixa$baixa[i]
+        }
+        else{
+          if(df_total_baixa$mes[i]=='abril'){
+            mes_b[4]=mes_b[4]+df_total_baixa$baixa[i]
+          }
+          else{
+            if(df_total_baixa$mes[i]=='maio'){
+              mes_b[5]=mes_b[5]+df_total_baixa$baixa[i]
+            }
+            else{
+              if(df_total_baixa$mes[i]=='junho'){
+                mes_b[6]=mes_b[6]+df_total_baixa$baixa[i]
+              }
+              else{
+                if(df_total_baixa$mes[i]=='julho'){
+                  mes_b[7]=mes_b[7]+df_total_baixa$baixa[i]
+                }
+                else{
+                  if(df_total_baixa$mes[i]=='agosto'){
+                    mes_b[8]=mes_b[8]+df_total_baixa$baixa[i]
+                  }
+                  else{
+                    if(df_total_baixa$mes[i]=='setembro'){
+                      mes_b[9]=mes_b[9]+df_total_baixa$baixa[i]
+                    }
+                    else{
+                      if(df_total_baixa$mes[i]=='outubro'){
+                        mes_b[10]=mes_b[10]+df_total_baixa$baixa[i]
+                      }
+                      else{
+                        if(df_total_baixa$mes[i]=='novembro'){
+                          mes_b[11]=mes_b[11]+df_total_baixa$baixa[i]
+                        }
+                        else{
+                          if(df_total_baixa$mes[i]=='dezembro'){
+                            mes_b[12]=mes_b[12]+df_total_baixa$baixa[i]
+                          }
+                        }}}}}}}}}}}}
+
 meses = c('jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez')
 barplot(mes_a, col =  heat.colors(12), legend.text = meses, args.legend = list(x = "topright"))
+barplot(mes_b, col =  heat.colors(12), legend.text = meses, args.legend = list(x = "topright"))
 
 boxplot(
   df_total_alta[which(df_total_alta$mes == 'janeiro'),]$alta,
@@ -138,4 +189,19 @@ boxplot(
   df_total_alta[which(df_total_alta$mes == 'outubro'),]$alta,
   df_total_alta[which(df_total_alta$mes == 'novembro'),]$alta,
   df_total_alta[which(df_total_alta$mes == 'dezembro'),]$alta
+)
+
+boxplot(
+  df_total_baixa[which(df_total_baixa$mes == 'janeiro'),]$baixa,
+  df_total_baixa[which(df_total_baixa$mes == 'fevereiro'),]$baixa, 
+  df_total_baixa[which(df_total_baixa$mes == 'marco'),]$baixa,
+  df_total_baixa[which(df_total_baixa$mes == 'abril'),]$baixa,
+  df_total_baixa[which(df_total_baixa$mes == 'maio'),]$baixa,
+  df_total_baixa[which(df_total_baixa$mes == 'junho'),]$baixa,
+  df_total_baixa[which(df_total_baixa$mes == 'julho'),]$baixa,
+  df_total_baixa[which(df_total_baixa$mes == 'agosto'),]$baixa,
+  df_total_baixa[which(df_total_baixa$mes == 'setembro'),]$baixa,
+  df_total_baixa[which(df_total_baixa$mes == 'outubro'),]$baixa,
+  df_total_baixa[which(df_total_baixa$mes == 'novembro'),]$baixa,
+  df_total_baixa[which(df_total_baixa$mes == 'dezembro'),]$baixa
 )
