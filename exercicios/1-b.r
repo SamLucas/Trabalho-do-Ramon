@@ -173,32 +173,32 @@ meses = c('jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez
 barplot(mes_a, col =  heat.colors(12), legend.text = meses, args.legend = list(x = "topright"))
 barplot(mes_b, col =  heat.colors(12), legend.text = meses, args.legend = list(x = "topright"))
 
-boxplot(
-  df_total_alta[which(df_total_alta$mes == 'janeiro'),]$alta,
-  df_total_alta[which(df_total_alta$mes == 'fevereiro'),]$alta, 
-  df_total_alta[which(df_total_alta$mes == 'marco'),]$alta,
-  df_total_alta[which(df_total_alta$mes == 'abril'),]$alta,
-  df_total_alta[which(df_total_alta$mes == 'maio'),]$alta,
-  df_total_alta[which(df_total_alta$mes == 'junho'),]$alta,
-  df_total_alta[which(df_total_alta$mes == 'julho'),]$alta,
-  df_total_alta[which(df_total_alta$mes == 'agosto'),]$alta,
-  df_total_alta[which(df_total_alta$mes == 'setembro'),]$alta,
-  df_total_alta[which(df_total_alta$mes == 'outubro'),]$alta,
-  df_total_alta[which(df_total_alta$mes == 'novembro'),]$alta,
-  df_total_alta[which(df_total_alta$mes == 'dezembro'),]$alta
-)
+# boxplot(
+#   df_total_alta[which(df_total_alta$mes == 'janeiro'),]$alta,
+#   df_total_alta[which(df_total_alta$mes == 'fevereiro'),]$alta, 
+#   df_total_alta[which(df_total_alta$mes == 'marco'),]$alta,
+#   df_total_alta[which(df_total_alta$mes == 'abril'),]$alta,
+#   df_total_alta[which(df_total_alta$mes == 'maio'),]$alta,
+#   df_total_alta[which(df_total_alta$mes == 'junho'),]$alta,
+#   df_total_alta[which(df_total_alta$mes == 'julho'),]$alta,
+#   df_total_alta[which(df_total_alta$mes == 'agosto'),]$alta,
+#   df_total_alta[which(df_total_alta$mes == 'setembro'),]$alta,
+#   df_total_alta[which(df_total_alta$mes == 'outubro'),]$alta,
+#   df_total_alta[which(df_total_alta$mes == 'novembro'),]$alta,
+#   df_total_alta[which(df_total_alta$mes == 'dezembro'),]$alta
+# )
 
-boxplot(
-  df_total_baixa[which(df_total_baixa$mes == 'janeiro'),]$baixa,
-  df_total_baixa[which(df_total_baixa$mes == 'fevereiro'),]$baixa, 
-  df_total_baixa[which(df_total_baixa$mes == 'marco'),]$baixa,
-  df_total_baixa[which(df_total_baixa$mes == 'abril'),]$baixa,
-  df_total_baixa[which(df_total_baixa$mes == 'maio'),]$baixa,
-  df_total_baixa[which(df_total_baixa$mes == 'junho'),]$baixa,
-  df_total_baixa[which(df_total_baixa$mes == 'julho'),]$baixa,
-  df_total_baixa[which(df_total_baixa$mes == 'agosto'),]$baixa,
-  df_total_baixa[which(df_total_baixa$mes == 'setembro'),]$baixa,
-  df_total_baixa[which(df_total_baixa$mes == 'outubro'),]$baixa,
-  df_total_baixa[which(df_total_baixa$mes == 'novembro'),]$baixa,
-  df_total_baixa[which(df_total_baixa$mes == 'dezembro'),]$baixa
-)
+# boxplot(
+#   df_total_baixa[which(df_total_baixa$mes == 'janeiro'),]$baixa,
+#   df_total_baixa[which(df_total_baixa$mes == 'fevereiro'),]$baixa, 
+#   df_total_baixa[which(df_total_baixa$mes == 'marco'),]$baixa,
+#   df_total_baixa[which(df_total_baixa$mes == 'abril'),]$baixa,
+#   df_total_baixa[which(df_total_baixa$mes == 'maio'),]$baixa,
+#   df_total_baixa[which(df_total_baixa$mes == 'junho'),]$baixa,
+#   df_total_baixa[which(df_total_baixa$mes == 'julho'),]$baixa,
+#   df_total_baixa[which(df_total_baixa$mes == 'agosto'),]$baixa,
+#   df_total_baixa[which(df_total_baixa$mes == 'setembro'),]$baixa,
+#   df_total_baixa[which(df_total_baixa$mes == 'outubro'),]$baixa,
+#   df_total_baixa[which(df_total_baixa$mes == 'novembro'),]$baixa,
+#   df_total_baixa[which(df_total_baixa$mes == 'dezembro'),]$baixa
+# )

@@ -24,6 +24,18 @@ df_total_baixa = read.csv(file = './src/alta-regiao-2-baixa - Página1.csv')
 # 2) Análise de correlação e regressão linear (3,0 pontos) Nas análises de correlação e regressão linear, você deve
 # - b) Gerar modelos de regressão linear simples e múltipla para previsão da doença do café.
 
+# Observações:
+
+#  1) Fazer testes considerando a média mensal e a soma das variáveis independentes considerando 1 e 2 meses de antecedência.
+
+#  2) Fazer testes considerando antecedência de:
+#  - 20 dias de antecedência (ex: doenca_cafe de abril, com os dados de março (11_20))
+#  - 30 dias de antecedência (ex: doenca_cafe de abril, com os dados de março (1_10))
+#  - 40 dias de antecedência (ex: doenca_cafe de abril, com os dados de fevereiro (21_30))
+#  - 50 dias de antecedência (ex: doenca_cafe de abril, com os dados de fevereiro (11_20))
+#  - 60 dias de antecedência (ex: doenca_cafe de abril, com os dados de fevereiro (1_10))
+#  - 70 dias de antecedência (ex: doenca_cafe de abril, com os dados de janeiro (21_30)
+
 converte = function(x){
   if(x < 20.1) return("baixo") 
   else if(x > 60) return("alto") 
@@ -72,17 +84,44 @@ df_total_baixa$NRH90 = apply(df_total_baixa[,27:29], 1, mean)
 df_total_sA = df_total_alta[,c(1:5,29:36)]
 df_total_sB = df_total_baixa[,c(1:5,29:36)]
 
-teste = data.frame(
-  df_total_sA$alta,
-  df_total_sA$P,
-  df_total_sA$UR,
-  df_total_sA$TMAX,
-  df_total_sA$TMIN,
-  df_total_sA$NDR.1mm,
-  df_total_sA$NDR.10mm,
-  df_total_sA$NRH80,
-  df_total_alta_aux$NRH90
-)
+df_cor = df_total_sA[c(1:126),c(6:13)]
+lista = c(df_total_sA$alta[c(2:127)])
+df_cor$alta = lista
+df_cor = df_cor[,c(9,1:8)]
 
-M <- cor(teste)
-corrplot(M,method = "circle")
+names(df_cor)<-c("alta","P","UR","TMAX","TMIN","NDR.1mm","NDR.10mm","NRH.80","NRH.90")
+
+modelo = lm(alta ~ P , data = df_cor)
+abline(modelo, col="red")
+plot(modelo)
+
+modelo = lm(alta ~ UR, data = df_cor)
+abline(modelo, col="red")
+plot(modelo)
+
+modelo = lm(alta ~ TMIN, data = df_cor)
+abline(modelo, col="red")
+plot(modelo)
+
+modelo = lm(alta ~ NDR.1mm, data = df_cor)
+abline(modelo, col="red")
+plot(modelo)
+
+modelo = lm(alta ~ NDR.10mm, data = df_cor)
+abline(modelo, col="red")
+plot(modelo)
+
+modelo = lm(alta ~ NRH.80, data = df_cor)
+abline(modelo, col="red")
+plot(modelo)
+
+modelo = lm(alta ~ NRH.90, data = df_cor)
+abline(modelo, col="red")
+plot(modelo)
+
+modelo = lm(alta ~ TMAX, data = df_cor)
+abline(modelo, col="red")
+plot(modelo)
+
+
+# Fazer testes considerando a média mensal e a soma das variáveis independentes considerando 1 e 2 meses de antecedência.
