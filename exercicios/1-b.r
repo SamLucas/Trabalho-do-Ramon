@@ -120,6 +120,7 @@ for(i in 1:nrow(df_total_alta)){
 
 mes_b<-c(0,0,0,0,0,0,0,0,0,0,0,0)
 for(i in 1:nrow(df_total_baixa)){
+  if(df_total_baixa$ano[i]=='2018'){
     if(df_total_baixa$mes[i]=='janeiro'){
       mes_b[1]=mes_b[1]+df_total_baixa$baixa[i]
     }
@@ -167,11 +168,11 @@ for(i in 1:nrow(df_total_baixa)){
                           if(df_total_baixa$mes[i]=='dezembro'){
                             mes_b[12]=mes_b[12]+df_total_baixa$baixa[i]
                           }
-                        }}}}}}}}}}}}
+                        }}}}}}}}}}}}}
 
 meses = c('jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez')
-barplot(mes_a, col =  heat.colors(12), legend.text = meses, args.legend = list(x = "topright"))
 barplot(mes_b, col =  heat.colors(12), legend.text = meses, args.legend = list(x = "topright"))
+barplot(mes_a, col =  heat.colors(12), legend.text = meses, args.legend = list(x = "topright"))
 
 # boxplot(
 #   df_total_alta[which(df_total_alta$mes == 'janeiro'),]$alta,

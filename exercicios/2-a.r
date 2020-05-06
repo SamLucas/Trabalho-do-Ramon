@@ -69,6 +69,63 @@ df_total_baixa$NDR.10mm = apply(df_total_baixa[,21:23], 1, mean)
 df_total_baixa$NRH80 = apply(df_total_baixa[,24:26], 1, mean)
 df_total_baixa$NRH90 = apply(df_total_baixa[,27:29], 1, mean)
 
+df_total_baixa
+
+alta_mes_janeiro <- df_total_alta[df_total_alta$mes == "janeiro",]
+alta_mes_fevereiro <- df_total_alta[df_total_alta$mes == "fevereiro",]
+alta_mes_marco <- df_total_alta[df_total_alta$mes == "marco",]
+alta_mes_abril <- df_total_alta[df_total_alta$mes == "abril",]
+alta_mes_maio <- df_total_alta[df_total_alta$mes == "maio",]
+alta_mes_junho <- df_total_alta[df_total_alta$mes == "junho",]
+alta_mes_julho <- df_total_alta[df_total_alta$mes == "julho",]
+alta_mes_agosto <- df_total_alta[df_total_alta$mes == "agosto",]
+alta_mes_setembro <- df_total_alta[df_total_alta$mes == "setembro",]
+alta_mes_outubro <- df_total_alta[df_total_alta$mes == "outubro",]
+alta_mes_novembro <- df_total_alta[df_total_alta$mes == "novembro",]
+alta_mes_dezembro <- df_total_alta[df_total_alta$mes == "dezembro",]
+
+baixa_mes_janeiro <- df_total_baixa[df_total_baixa$mes == "janeiro",]
+baixa_mes_fevereiro <- df_total_baixa[df_total_baixa$mes == "fevereiro",]
+baixa_mes_marco <- df_total_baixa[df_total_baixa$mes == "marco",]
+baixa_mes_abril <- df_total_baixa[df_total_baixa$mes == "abril",]
+baixa_mes_maio <- df_total_baixa[df_total_baixa$mes == "maio",]
+baixa_mes_junho <- df_total_baixa[df_total_baixa$mes == "junho",]
+baixa_mes_julho <- df_total_baixa[df_total_baixa$mes == "julho",]
+baixa_mes_agosto <- df_total_baixa[df_total_baixa$mes == "agosto",]
+baixa_mes_setembro <- df_total_baixa[df_total_baixa$mes == "setembro",]
+baixa_mes_outubro <- df_total_baixa[df_total_baixa$mes == "outubro",]
+baixa_mes_novembro <- df_total_baixa[df_total_baixa$mes == "novembro",]
+baixa_mes_dezembro <- df_total_baixa[df_total_baixa$mes == "dezembro",]
+
+
+media_alta_mes_janeiro <- mean(alta_mes_janeiro$alta)
+media_alta_mes_fevereiro <- mean(alta_mes_fevereiro$alta)
+media_alta_mes_marco <- mean(alta_mes_marco$alta)
+media_alta_mes_abril <- mean(alta_mes_abril$alta)
+media_alta_mes_maio <- mean(alta_mes_maio$alta)
+media_alta_mes_junho <- mean(alta_mes_junho$alta)
+media_alta_mes_julho <- mean(alta_mes_julho$alta)
+media_alta_mes_agosto <- mean(alta_mes_agosto$alta)
+media_alta_mes_setembro <- mean(alta_mes_setembro$alta)
+media_alta_mes_outubro <- mean(alta_mes_outubro$alta)
+media_alta_mes_novembro <- mean(alta_mes_novembro$alta)
+media_alta_mes_dezembro <- mean(alta_mes_dezembro$alta)
+
+media_baixa_mes_janeiro <- mean(baixa_mes_janeiro$baixa)
+media_baixa_mes_fevereiro <- mean(baixa_mes_fevereiro$baixa)
+media_baixa_mes_marco <- mean(baixa_mes_marco$baixa)
+media_baixa_mes_abril <- mean(baixa_mes_abril$baixa)
+media_baixa_mes_maio <- mean(baixa_mes_maio$baixa)
+media_baixa_mes_junho <- mean(baixa_mes_junho$baixa)
+media_baixa_mes_julho <- mean(baixa_mes_julho$baixa)
+media_baixa_mes_agosto <- mean(baixa_mes_agosto$baixa)
+media_baixa_mes_setembro <- mean(baixa_mes_setembro$baixa)
+media_baixa_mes_outubro <- mean(baixa_mes_outubro$baixa)
+media_baixa_mes_novembro <- mean(baixa_mes_novembro$baixa)
+media_baixa_mes_dezembro <- mean(baixa_mes_dezembro$baixa)
+
+colnames(alta_mes_novembro)
+
 df_total_sA = df_total_alta[,c(1:5,29:36)]
 df_total_sB = df_total_baixa[,c(1:5,29:36)]
 
